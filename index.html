@@ -1,0 +1,37 @@
+<html>
+<body>
+<script>
+$("input").change(function(e) {
+
+    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+        
+        var file = e.originalEvent.srcElement.files[i];
+        
+        var img = document.createElement("img");
+        var reader = new FileReader();
+        reader.onloadend = function() {
+             img.src = reader.result;
+        }
+        reader.readAsDataURL(file);
+        $("input").after(img);
+    }
+});
+
+
+// Prefer camera resolution nearest to 1280x720.
+var constraints = { audio: false, video: { width: 300, height: 300 } }; 
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(mediaStream) {
+  var video = document.querySelector('video');
+  video.srcObject = mediaStream;
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+.catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+</script>
+<video id="vid"></video>
+<input type="file" accept="image"></input>
+<body>
+</html>
