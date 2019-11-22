@@ -1,15 +1,29 @@
-$("input").change(function(e) {
+window.onload = function() {
 
-    for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-        
-        var file = e.originalEvent.srcElement.files[i];
-        
-        var img = document.createElement("img");
-        var reader = new FileReader();
-        reader.onloadend = function() {
-             img.src = reader.result;
-        }
-        reader.readAsDataURL(file);
-        $("overlay").after(img);
-    }
-});
+		var fileInput = document.getElementById('fileInput');
+		var fileDisplayArea = document.getElementById('overlay');
+
+
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+			var imageType = /image.*/;
+
+			if (file.type.match(imageType)) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					fileDisplayArea.innerHTML = "";
+
+					var img = new Image();
+					img.src = reader.result;
+
+					fileDisplayArea.appendChild(img);
+				}
+
+				reader.readAsDataURL(file);	
+			} else {
+				fileDisplayArea.innerHTML = "File not supported!"
+			}
+		});
+
+}
