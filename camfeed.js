@@ -1,6 +1,5 @@
 // Prefer camera resolution nearest to 1280x720.
-var constraints = { audio: false, video: true};
-navigator.mediaDevices.getUserMedia(constraints)
+navigator.mediaDevices.getUserMedia()
 .then(function(mediaStream) {
   var video = document.querySelector('video');
   video.srcObject = mediaStream;
