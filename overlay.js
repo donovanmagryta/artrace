@@ -4,8 +4,7 @@ window.onload = function() {
 		var fileDisplayArea = document.getElementById('overlay');
 
 
-		//fileInput.addEventListener('change', function(e) {
-			$("fileInput").change(function(e) {
+		fileInput.addEventListener('change', function(e) {
 			var file = fileInput.files[0];
 			var imageType = /image.*/;
 
