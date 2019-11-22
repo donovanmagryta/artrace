@@ -8,6 +8,7 @@
     opacity: 25%; 
     height: 720;
     width: 1280;
+	 z-index: 2;
   }
   img {
     position: absolute;
@@ -16,6 +17,7 @@
     opacity: 25%; 
     height: 720;
     width: 1280;
+	  z-index: 2;
 	}
     video {
     position: absolute;
@@ -23,6 +25,7 @@
     top: 0px; 
     height: 720;
     width: 1280;
+	    z-index:1;
 	}
 	.in {
 		z-index:5;
@@ -36,7 +39,7 @@
 <video id="vid"></video>
 <br><br>
 <div id="in">
-<input type="file" id=fileInput" accept="image"></input>
+<input type="file" id=fileInput" accept="image" style="z-index: 5;"></input>
 </div>					   
 <div id="overlay"></div>
 </body>
