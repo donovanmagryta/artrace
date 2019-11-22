@@ -1,4 +1,4 @@
-//window.onload = function() {
+window.onload = function() {
 
 		var fileInput = document.getElementById('fileInput');
 		var fileDisplayArea = document.getElementById('overlay');
@@ -26,4 +26,4 @@
 			}
 		});
 
-//}
+}
