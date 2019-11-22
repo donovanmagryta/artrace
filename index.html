@@ -1,7 +1,21 @@
 <html>
 <body>
 <script>
-$("input").change(function(e){for(var n=0;n<e.originalEvent.srcElement.files.length;n++){var t=e.originalEvent.srcElement.files[n],a=document.createElement("img"),i=new FileReader;i.onloadend=function(){a.src=i.result},i.readAsDataURL(t),$("input").after(a)}});var constraints={audio:!1,video:{width:300,height:300}};navigator.mediaDevices.getUserMedia(constraints).then(function(e){var n=document.querySelector("video");n.srcObject=e,n.onloadedmetadata=function(e){n.play()}}).catch(function(e){console.log(e.name+": "+e.message)});
+$("input").change(function(e){
+  for(var n=0;n<e.originalEvent.srcElement.files.length;n++) {
+    var t=e.originalEvent.srcElement.files[n],a=document.createElement("img"),i=new FileReader;i.onloadend=function(){
+      a.src=i.result},i.readAsDataURL(t),$("input").after(a)
+  }
+});
+  
+  var constraints={audio:!1,video:{width:300,height:300}};
+  navigator.mediaDevices.getUserMedia(constraints).then(function(e){
+    var n=document.querySelector("video");
+    n.srcObject=e,n.onloadedmetadata=function(e){
+      n.play()
+    }
+  }).catch(function(e){
+    console.log(e.name+": "+e.message)});
 </script>
 <video id="vid"></video>
 <input type="file" accept="image"></input>
