@@ -2,6 +2,7 @@ window.onload = function() {
 
 		var fileInput = document.getElementById('fileInput');
 		var fileDisplayArea = document.getElementById('overlay');
+	if(fileInput){
 
 
 		fileInput.addEventListener('change', function(e) {
@@ -26,4 +27,5 @@ window.onload = function() {
 			}
 		});
 
+}
 }
