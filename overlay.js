@@ -25,7 +25,7 @@ window.onload = function() {
 			} else {
 				fileDisplayArea.innerHTML = "File not supported!";
 			}
-		};
+		}
 
 }
 }
