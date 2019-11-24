@@ -11,6 +11,6 @@ function readURL(input) {
     }
 }
 
-$("#fileInput").change(function(){
+$("#imgInp").change(function(){
     readURL(this);
 });
